@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>SpoutFiny</title>
+</head>
+<body class="bg-gray-900">
+
+    <div>
+        <header class="bg-black p-4 flex justify-between items-center">
+            <div class="text-white text-lg font-bold">Spotify</div>
+            <nav class="hidden lg:flex space-x-6 text-white">
+                <a href="#" class="hover:text-gray-400">Premium</a>
+                <a href="#" class="hover:text-gray-400">Suporte</a>
+                <a href="#" class="hover:text-gray-400">Baixar</a>
+                <span class="text-gray-500">|</span>
+                <a href="#" class="hover:text-gray-400">Inscrever-se</a>
+                <a href="#" class="hover:text-gray-400">Entrar</a>
+            </nav>
+            <div class="lg:hidden">
+                <button id="menu-btn" class="text-white text-2xl" onclick="document.querySelector('#modal').showModal()">☰</button>
+            </div>
+        </header>
+        <dialog id="modal" class="w-full bg-black text-white p-4">
+            <form method="dialog">
+                <button class="absolute top-1 right-3">x</button>
+            </form>
+            <br>
+            <br>
+            <div class="grid grid-cols-1 grid-rows-5 text-center gap-">
+                <h1>Premium</h1>
+                <hr>
+                <h1>Suporte</h1>
+                <hr>
+                <h1>Baixar</h1>
+                <hr>
+                <br>
+                <button class="bg-white text-black rounded-md ">Inscreva-se</button>
+                <hr class="size-5">
+                <button class="bg-green-400 text-black rounded-md ">Entrar</button>
+            </div>
+        </dialog>
+    </div>
+</body>
+</html>

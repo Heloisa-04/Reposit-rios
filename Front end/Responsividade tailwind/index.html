@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="flex justify-center items-center h-dvh ">
+    <button class="bg-amber-400 border-2 rounded p-2 m-5 flex items-center hidden lg:flex" onclick="document.querySelector('#modal').showModal()">Abrir 
+        <div class="h-4 w-4 border-3 border-l-transparent rounded-full animate-spin"></div>
+    </button> 
+    </div>
+
+
+    <dialog id="modal" class="absolute top-1/2 left-1/2 p-4 translate-[-50%] cur text-2xl md:text-3xl  lg:text-4xl">
+        <p>ERNESTO</p>
+        <img src="/Ernesto.jpg" class="h-60 right-1/2">
+        <h1>DESEJAS SER IGUAL A ERNESTO?</h1>
+        <form action="">
+            <input type="email" name="" id="" class="border w-full  max-w-96">
+            <input type="submit" class="bg-yellow-500 mt-3  border" value="RESPOSTA">
+        </form>
+        <form method="dialog"> <button class="absolute top-[-2px] right-2">X</button>
+        </form>
+    </dialog>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Spotify Header</title>
+</head>
+<body >
+    <header class="bg-black p-4 flex justify-between items-center">
+        <div class="text-white text-lg font-bold">Spotify</div>
+        <nav class="hidden md:flex space-x-6 text-white">
+            <a href="#" class="hover:text-gray-400">Premium</a>
+            <a href="#" class="hover:text-gray-400">Suporte</a>
+            <a href="#" class="hover:text-gray-400">Baixar</a>
+            <span class="text-gray-500">|</span>
+            <a href="#" class="hover:text-gray-400">Inscrever-se</a>
+            <a href="#" class="hover:text-gray-400">Entrar</a>
+        </nav>
+        <button class="md:hidden text-white text-2xl focus:outline-none">&#9776;</button>
+    </header>
+    
+    <nav class="hiddenabsolute top-16 left-0 w-full bg-black text-white flex flex-col items-center space-y-4 py-4 md:hidden">
+        <a href="#" class="hover:text-gray-400">Premium</a>
+        <a href="#" class="hover:text-gray-400">Suporte</a>
+        <a href="#" class="hover:text-gray-400">Baixar</a>
+        <a href="#" class="hover:text-gray-400">Inscrever-se</a>
+        <a href="#" class="hover:text-gray-400">Entrar</a>
+    </nav>
+</body>
+</html>

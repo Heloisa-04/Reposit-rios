@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+</head>
+<body class="bg-gray-300 min-h-96">
+      <header class="bg-black w-screen h-92  "> 
+    
+        <h2 class="top-20 font-Archivo text-white text-2xl pl-60 pt-20">Crie e compartilhe<br> 
+          seu evento. </h2>
+          <p class="text-cyan-300 px-auto mt-4  pl-60">O primeiro passo, é preencher esse<br>
+            formulário de inscrição.</p>
+      
+
+        <div class="bg-white w-184 h-275 mt-24 ml-60 p-10 rounded-2xl shadow-rose-500 ">
+          <h1 class="font-Archivo text-2xl mb-4 "> <b>Informações do evento</b></h1>
+          
+          <hr class="bg-gray-300 mb-4"></hr>
+
+          <form class="mt-6">
+            <div class="mb-4">
+              <p class="block font-Archivo">Título do evento</p>
+              <input type="text" class="w-full p-2 border rounded-md" placeholder="" required>
+            </div>
+          
+            <div class="mb-4">
+              <p class="block font-Archivo">Link do evento</p>
+              <input type="text" class="w-full p-2 border rounded-md" placeholder="" required>
+            </div>
+
+            <div class="mb-4">
+              <p class="block font-Archivo">Whatsapp para contato</p>
+              <input type="text" class="w-full p-2 border rounded-md" placeholder="" required>
+            </div>
+
+            <div class="mb-4">
+              <p class="block font-Archivo">Informações extras</p>
+              <textarea type="text" class="w-full  border rounded-md" placeholder="" required></textarea>
+            </div>
+
+            <div class="mb-4">
+              <p class="block font-Archivo">Categoria</p>
+              <input class="w-full p-2 border rounded-md">
+            </div>
+
+            <div>
+              <h1 class="font-Archivo text-2xl mb-4"><b>Privacidade</b></h1>
+            </div>
+
+            
+            <hr class="bg-slate-400 mb-4"></hr>
+            
+            <div class="mb-4">
+              <p class="block font-Archivo">E-mail do administrador</p>
+              <input type="text" class="w-full p-2 border rounded-md" >
+            </div>
+
+            <div class="mb-4">
+              <p class="block font-Archivo">Senha de acesso para os participantes</p>
+              <input type="text" class="w-full p-2 border rounded-md" placeholder="" required>
+            </div>
+
+            <div>
+              <label class="inline-flex items-center">
+                 <input type="checkbox" class="mr-2 w-4 h-6"> Evento privado
+              </label>
+            </div>
+
+
+            <div class="mt-12 mb-4">
+              <h1 class="font-Archivo text-2xl"><b>Dia e hora</b></h1>
+            </div>
+
+            <hr class="bg-slate-400 mb-4"></hr>
+
+            <div class="mb-4 grid grid-cols-3 gap-2">
+              <div>
+                  <label class="block font-semibold">Data</label>
+                  <input type="date" class="w-full p-2 border rounded-md">
+              </div>
+              <div>
+                  <label class="block font-semibold">Das</label>
+                  <input type="time" class="w-full p-2 border rounded-md">
+              </div>
+              <div>
+                  <label class="block font-semibold">Até</label>
+                  <input type="time" class="w-full p-2 border rounded-md">
+              </div>
+          </div>
+          <br>
+
+          <div>
+            <button type="submit" class="w-full bg-green-500 text-white p-3 rounded-md font-bold hover:bg-green-600">Salvar evento</button>
+          </div>
+          </form>
+        </div>
+      <header>  
+</body>
+</html>

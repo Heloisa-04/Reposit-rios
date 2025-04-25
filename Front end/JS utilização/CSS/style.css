@@ -1,0 +1,17 @@
+@import url(header.css);
+@import url(home.css);
+
+/*definir váriaveis*/
+
+:root{
+    --primary-color: #ff0000;
+    --secundary-color: #f5f5f5;
+    --font-size: 40px;
+    --font-title: 180px
+    
+}
+
+body{
+    background-color: var(--primary-color);
+}
+

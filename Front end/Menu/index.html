@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Spotify</title>
+</head>
+<body>
+    <div>
+        <div class="bg-black min-h-30  flex justify-between items-center max-h-dvh ">
+            <img class="ml-60 md:flex h-12 max-w-full hidden" src="/Logo.png">
+            <nav class="text-white md:grid text-lg grid-cols-6 p-10 bg-black hidden">
+                <a href="">Premium</a>
+                <a href="">Suporte</a>
+                <a href="">Baixar</a>
+                <span class="text-gray-200">|</span>
+                <a class="" href="">Inscrever-se</a>
+                <a  class="ml-6" href="">Entrar</a>
+            </nav>
+            <button class="text-white text-2xl" onclick="document.querySelector('#modal').showModal()">☰</button>
+        </div>
+    
+        <dialog class="id="modal class="w-full bg-black text-white p-4">
+            <form method="dialog">
+                <button class="absolute top-1 right-3">x</button>
+            </form>
+            <div class="text-white flex flex-col justify-center items-center bg-black hiddenabsolute md:hidden">
+                <a href="">Premium</a>
+                <br>
+                <hr>
+                <a href="">Suporte</a>
+                <br>
+                <hr>
+                <a href="">Baixar</a>
+                <br>
+                <hr class="">
+                
+                <button class="text-black bg-white rounded p-1 w-125 max-w-full mt-4 ">Inscreva-se</button>
+                <button class="bg-green-500 rounded p-1 w-125 max-w-full mt-4" href="">Entrar</button>
+            </div>
+        </dialog>
+
+
+    </div>
+   
+    
+</body>
+</html>
