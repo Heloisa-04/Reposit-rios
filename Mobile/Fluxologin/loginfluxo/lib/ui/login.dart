@@ -10,7 +10,9 @@ class Login extends StatelessWidget {
        padding : const EdgeInsets.all(20),
        child: Column(
         children: [
-          Text("Login")
+          Text("Login"),
+          SizedBox(height: 60,)
+
         ],
        ),
        
