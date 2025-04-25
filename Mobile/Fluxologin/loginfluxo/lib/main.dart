@@ -1,10 +1,16 @@
+import 'package:loginfluxo/ui/login.dart';
 import 'package:flutter/material.dart';
 
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
+void main(){
+  runApp(App()); 
+}
 
+
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      home: Login(), 
+    );
   }
 }
