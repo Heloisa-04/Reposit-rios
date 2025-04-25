@@ -1,0 +1,22 @@
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.Produto.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>{{ Titulo_add }}</h1>
+
+    <!-- Listagem dos produtos já cadastrados -->
+    <div class="produtos-grid">
+        {% for id, produto in produtos.items() %}
+            <div class="produto-card">
+                <h3>{{ id }} - {{ produto.nome }}</h3>
+                <p>Preço: R$ {{ produto.Preco }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Formulário para adicionar um novo produto -->
+    <a href="/form_produto" class="botao">Adicionar produto</a>
+</div>
+{% endblock %}

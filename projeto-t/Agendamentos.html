@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clínica Martins</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+</head>
+<body class="bg-[#E8E8E8]">
+
+  <!-- Sidebar -->
+  <aside id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-[#4F4B4B] text-white z-50 transform -translate-x-full transition-transform duration-300">
+    
+    <!-- Botão "X" fixo no canto superior esquerdo -->
+    <button id="menu-close" class="absolute top-4 left-4 text-white text-2xl z-50">
+      <i class="bi bi-x-lg"></i>
+    </button>
+
+    <!-- Menu Links -->
+    <div class="flex flex-col mt-16 space-y-4 px-6">
+      <a href="index.html" class="hover:text-[#A5F2F3] hover:border-b border-[#A5F2F3] pb-1">Dashboard</a>
+      <a href="#" class="hover:text-[#A5F2F3] hover:border-b border-[#A5F2F3] pb-1">Médicos</a>
+      <a href="#" class="hover:text-[#A5F2F3] hover:border-b border-[#A5F2F3] pb-1">Prontuários</a>
+      <a href="#" class="hover:text-[#A5F2F3] hover:border-b border-[#A5F2F3] pb-1">Agendamentos</a>
+    </div>
+  </aside>
+
+  <!-- Overlay -->
+  <div id="overlay" class="fixed inset-0 bg-black bg-opacity-40 z-40 hidden"></div>
+
+  <!-- Layout principal -->
+  <div class="grid grid-rows-[auto_1fr_auto] min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-[#6B6BAA] flex items-center px-4 py-3 relative z-30">
+      <!-- Botão hamburguer -->
+      <button id="menu-toggle" class="text-white text-2xl z-50 mr-2">
+        <i id="menu-icon" class="bi bi-list"></i>
+      </button>
+
+      <!-- Logo -->
+      <img id="logo" src="/Images/do-utilizador 3.png" alt="Usuário" class="h-10 transition-all duration-300" />
+
+      <!-- Usuário -->
+      <div class="ml-auto">
+        <img src="/Images/logo-proFE.webp" alt="Logo" class="h-10 w-10 rounded-full object-cover" />
+      </div>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="p-4">
+      
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#6A6A6A] text-white grid grid-cols-1 md:grid-cols-2 gap-6 p-4">
+      <div class="flex flex-col items-center md:items-start">
+        <img src="/Images/logo-proFE.webp" alt="Logo" class="rounded-full h-10 mb-2">
+        <p>Sua saúde mental é a nossa prioridade</p>
+      </div>
+      <div class="flex flex-col items-center md:items-start space-y-1">
+        <p>Termos de uso</p>
+        <p>Política de Privacidade</p>
+        <p>Suporte</p>
+        <div class="flex space-x-4 mt-2 text-xl">
+          <i class="bi bi-twitter"></i>
+          <i class="bi bi-whatsapp"></i>
+          <i class="bi bi-instagram"></i>
+        </div>
+        <p class="mt-2 text-sm">Todos os direitos reservados</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- JS para controlar o menu -->
+  <script>
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+    const menuToggle = document.getElementById("menu-toggle");
+    const menuIcon = document.getElementById("menu-icon");
+    const menuClose = document.getElementById("menu-close");
+
+    function openMenu() {
+      sidebar.classList.remove("-translate-x-full");
+      sidebar.classList.add("translate-x-0");
+      overlay.classList.remove("hidden");
+      menuIcon.classList.remove("bi-list");
+      menuIcon.classList.add("bi-x-lg");
+    }
+
+    function closeMenu() {
+      sidebar.classList.add("-translate-x-full");
+      sidebar.classList.remove("translate-x-0");
+      overlay.classList.add("hidden");
+      menuIcon.classList.remove("bi-x-lg");
+      menuIcon.classList.add("bi-list");
+    }
+
+    function toggleMenu() {
+      const isOpen = sidebar.classList.contains("translate-x-0");
+      isOpen ? closeMenu() : openMenu();
+    }
+
+    menuToggle.addEventListener("click", toggleMenu);
+    menuClose.addEventListener("click", closeMenu);
+    overlay.addEventListener("click", closeMenu);
+  </script>
+</body>
+</html>

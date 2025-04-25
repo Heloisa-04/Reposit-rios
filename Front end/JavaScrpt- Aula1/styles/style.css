@@ -1,0 +1,30 @@
+.dark{
+    background-color: black;
+    color: #fff;
+}
+
+bi{
+    display: flex;
+    justify-content: left;
+}
+
+.btn{
+    border-color: rgb(255, 246, 120);
+    border-radius: 9px;
+    color:rgb(255, 255, 255);
+    background-color: rgb(255, 230, 0);
+    cursor: pointer;
+    align-items: center;
+    height: 4rem;
+    width: 8rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-items: center;
+}
+
+.btn.ativo{
+    background-color: cornflowerblue;
+    color: aliceblue;
+    border-color: rgb(211, 235, 255);
+}
+

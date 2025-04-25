@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODUTOS</title>
+</head>
+<body>
+    <button><a href="/form_produto"> ADICIONAR PRODUTO </a></button>
+
+    {% for chave, valor in produtos.items() %}
+        <ul>
+            <li>{{valor.nome}}</li>
+            <li>{{valor.Preco}}</li>
+        </ul>
+    {% endfor %}
+
+</body>
+</html>

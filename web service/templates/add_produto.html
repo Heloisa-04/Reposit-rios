@@ -1,0 +1,21 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block link %}
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.AddProduto.css') }}">
+    {% endblock %}
+    <title>ADICIONAR PRODUTOS</title>
+</head>
+<body>
+    <h2>ADICIONAR PRODUTOS</h2>
+    <form action="/add_produto" method="POST">
+        <label>NOME: </label>
+        <input type="text" name="nome"><br><br>
+
+        <label>PREÇO: </label>
+        <input type="text" name="preco"><br><br>
+
+        <input type="submit" value="CADASTRAR">
+    </form>
+</body>
+</html>

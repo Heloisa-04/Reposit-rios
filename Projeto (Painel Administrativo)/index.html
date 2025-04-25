@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Clínica Martins</title>
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+</head>
+
+
+<body class="bg-[#E8E8E8]">
+
+  <aside id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-[#4F4B4B] text-white z-50 transform -translate-x-full transition-transform duration-300">
+    
+
+    <button id="menu-close" class="absolute top-4 left-4 text-white text-2xl z-50">
+      <i class="bi bi-x-lg"></i>
+    </button>
+
+    
+    <div class="flex flex-col mt-16 space-y-4 px-6">
+      <a href="index.html" class="hover:text-[#A5F2F3] hover:border-b border-[#A5F2F3] pb-1">Dashboard</a>
+      <a href="#" class="hover:text-[#A5F2F3] hover:border-b border-[#A5F2F3] pb-1 ">Médicos</a>
+      <a href="#" class="hover:text-[#A5F2F3] hover:border-b border-[#A5F2F3] pb-1">Prontuários</a>
+      <a href="#" class="hover:text-[#A5F2F3] hover:border-b border-[#A5F2F3] pb-1">Agendamentos</a>
+    </div>
+  </aside>
+
+
+  <div id="overlay" class="fixed inset-0 bg-black bg-opacity-40 z-40 hidden"></div>
+
+
+  <div class="grid grid-rows-[auto_1fr_auto] min-h-screen">
+
+   
+    <header class="bg-[#6B6BAA] flex items-center px-4 py-3 relative z-30">
+   
+      <button id="menu-toggle" class="text-white text-2xl z-50 mr-2">
+        <i id="menu-icon" class="bi bi-list"></i>
+      </button>
+
+     
+      <img id="logo" src="/Images/do-utilizador 3.png" alt="Usuário" class="h-10 transition-all duration-300" />
+
+  
+      <div class="ml-auto">
+        <img src="/Images/logo-proFE.webp" alt="Logo" class="h-10 w-10 rounded-full object-cover" />
+      </div>
+    </header>
+
+    <main class="p-4 flex justify-center items-center">
+
+      <div class="flex gap-20 p-8 rounded-lg">
+
+        <div class="flex bg-[#4F4B4B] w-64 shadow-xl p-4">
+          <div class="bg-white rounded-xl p-4 w-64">
+            <input type="date" class="w-full border  rounded-md p-2 mb-4 text-gray-700 font-['Poppins']"/>
+          </div>
+        </div>
+        
+        <div class="flex bg-[#4F4B4B] w-64 shadow-xl p-4">
+          <<form class="bg-white rounded-xl shadow-md p-4 w-64  space-y-4">
+            <div>
+              <label class="block text-sm text-gray-700 mb-1 font-['Poppins']">Psicólogo</label>
+              <input type="text" placeholder="Nome do psicólogo" class="w-full border border-gray-300 rounded-md p-2"/>
+            </div>
+  
+            <div>
+              <label class="block text-sm text-gray-700 mb-1 font-['Poppins']">Paciente</label>
+              <input type="text" placeholder="Nome do paciente" class="w-full border border-gray-300 rounded-md p-2"/>
+            </div>
+  
+            <div>
+              <label class="block text-sm text-gray-700 mb-1 font-['Poppins']">Horário</label>
+              <input type="time" class="w-full border border-gray-300 rounded-md p-2"/>
+            </div>
+  
+            <button type="submit" class="w-full bg-red-600 text-white py-2 rounded-md hover:bg-red-700 transition">
+              Salvar
+            </button>
+          </form>
+      
+        </div>
+        </div>
+        
+    </main>
+
+    <footer class="bg-[#6A6A6A] text-white flex flex-col md:flex-row p-4 gap-6">
+      
+        <div class="flex-1 flex flex-col items-center md:items-start">
+          <img src="/images/logo-proFE.webp" alt="Logo" class="rounded-full h-16 mb-2">
+          <p>Sua saúde mental é a nossa prioridade</p>
+        </div>
+      
+        <div class="hidden md:block w-px bg-white mx-4"></div>
+      
+        <
+        <div class="flex-1 flex flex-col items-center md:items-start space-y-1">
+          <p>Termos de uso</p>
+          <p>Política de Privacidade</p>
+          <p>Suporte</p>
+          <div class="flex space-x-4 mt-2 text-xl">
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-whatsapp"></i>
+            <i class="bi bi-instagram"></i>
+          </div>
+          <p class="mt-2 text-sm">Todos os direitos reservados</p>
+        </div>
+    </footer>
+      
+      
+  </div>
+
+ 
+  <script>
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+    const menuToggle = document.getElementById("menu-toggle");
+    const menuIcon = document.getElementById("menu-icon");
+    const menuClose = document.getElementById("menu-close");
+
+    function openMenu() {
+      sidebar.classList.remove("-translate-x-full");
+      sidebar.classList.add("translate-x-0");
+      overlay.classList.remove("hidden");
+      menuIcon.classList.remove("bi-list");
+      menuIcon.classList.add("bi-x-lg");
+    }
+
+    function closeMenu() {
+      sidebar.classList.add("-translate-x-full");
+      sidebar.classList.remove("translate-x-0");
+      overlay.classList.add("hidden");
+      menuIcon.classList.remove("bi-x-lg");
+      menuIcon.classList.add("bi-list");
+    }
+
+    function toggleMenu() {
+      const isOpen = sidebar.classList.contains("translate-x-0");
+      isOpen ? closeMenu() : openMenu();
+    }
+
+    menuToggle.addEventListener("click", toggleMenu);
+    menuClose.addEventListener("click", closeMenu);
+    overlay.addEventListener("click", closeMenu);
+  </script>
+</body>
+</html>
+
