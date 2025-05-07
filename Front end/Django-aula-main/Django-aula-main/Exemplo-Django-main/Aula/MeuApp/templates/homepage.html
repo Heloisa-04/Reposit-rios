@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMEPAGE</title>
+</head>
+<body>
+    {% for home in home %}
+        <h1>{{home.Titulo}}</h1>
+        <p>{{home.Descricao}}</p>
+        <img src="{{home.Imagem.url}}" alt="Logo">
+    {% endfor %}
+
+    <hr>
+    <hr>
+    
+    <h1>{{home.0.Titulo}}</h1>
+    <p>{{home.0.Descricao}}</p>
+    <img src="{{home.0.Imagem.url}}" alt="Logo">
+
+</body>
+</html>
