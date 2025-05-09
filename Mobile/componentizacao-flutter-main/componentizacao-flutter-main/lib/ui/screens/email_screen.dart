@@ -4,6 +4,7 @@ import 'package:componentes_flutter/ui/widgets/custom_textbutton.dart';
 import 'package:componentes_flutter/ui/widgets/custom_textfield.dart';
 import 'package:componentes_flutter/ui/widgets/custom_title.dart';
 import 'package:flutter/material.dart';
+import 'package:componentes_flutter/ui/screens/create_account.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -31,8 +32,14 @@ class LoginScreen extends StatelessWidget {
                 );
                 },
               ),
-              CustomTextbutton(text: "Dont have Account", textButton: "Create", onPressed: () {},)
-              ,
+              CustomTextbutton(text: "Dont have Account", textButton: "Create", onPressed: () {
+                    Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (context) => const CreateAccount(),
+                              ),
+                    );
+              },
+              ),
               SizedBox(height: 60,),
               CustomButton(
                 text: "Continue with Apple",

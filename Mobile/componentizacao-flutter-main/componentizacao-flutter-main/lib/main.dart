@@ -17,7 +17,7 @@ class App extends StatelessWidget {
       home: LoginScreen(),
       theme: ThemeData(
         textTheme: GoogleFonts.outfitTextTheme(),
-        scaffoldBackgroundColor: Colors.white
+        scaffoldBackgroundColor: Colors.white,
       ),
     );
   }

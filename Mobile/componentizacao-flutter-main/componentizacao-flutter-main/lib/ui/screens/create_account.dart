@@ -10,11 +10,31 @@ import 'package:flutter/material.dart';
 class CreateAccount extends StatelessWidget {
   const CreateAccount({super.key});
 
-  @override
+   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(child: Padding(padding: )),
+      appBar: AppBar(),
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+          child: Column(
+            children: [
+              CustomTitle(text: "Create Account",),
+              SizedBox(height: 24,),
+              CustomTextfield(hintText: "Firstname"),
+              SizedBox(height: 14,),
+              CustomTextfield(hintText: "Lastname"),
+              SizedBox(height: 14,),
+              CustomTextfield(hintText: "Email Adress"),
+              SizedBox(height: 14,),
+              CustomTextfield(hintText: "Password"),
+              SizedBox(height: 14,),
+              CustomButton( text: "Continue",  onPressed:(){},),
+              SizedBox(height: 24,),
+            ],
+          ),
+        ),
+      ),
     );
-   
   }
 }
