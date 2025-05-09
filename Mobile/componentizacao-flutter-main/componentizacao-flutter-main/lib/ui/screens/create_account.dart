@@ -1,10 +1,9 @@
-import 'package:componentes_flutter/ui/screens/password_screen.dart';
 import 'package:componentes_flutter/ui/widgets/custom_button.dart';
 import 'package:componentes_flutter/ui/widgets/custom_textbutton.dart';
 import 'package:componentes_flutter/ui/widgets/custom_textfield.dart';
 import 'package:componentes_flutter/ui/widgets/custom_title.dart';
 import 'package:flutter/material.dart';
-
+import 'package:componentes_flutter/ui/screens/forgot_password.dart';
 
 
 class CreateAccount extends StatelessWidget {
@@ -31,6 +30,14 @@ class CreateAccount extends StatelessWidget {
               SizedBox(height: 14,),
               CustomButton( text: "Continue",  onPressed:(){},),
               SizedBox(height: 24,),
+              CustomTextbutton(text: "Forgot Password ?", textButton: "Reset", onPressed: () {
+                    Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (context) => const ForgotPassword(),
+                              ),
+                    );
+              },
+              ),
             ],
           ),
         ),

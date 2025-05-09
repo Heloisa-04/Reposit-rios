@@ -18,6 +18,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         textTheme: GoogleFonts.outfitTextTheme(),
         scaffoldBackgroundColor: Colors.white,
+        appBarTheme: AppBarTheme(color: Colors.white)
       ),
     );
   }
