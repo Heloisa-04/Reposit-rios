@@ -1,6 +1,8 @@
 import 'package:componentes_flutter/ui/widgets/custom_button.dart';
 import 'package:componentes_flutter/ui/widgets/custom_title.dart';
 import 'package:flutter/material.dart';
+import 'package:componentes_flutter/ui/screens/email_screen.dart';
+
 
 class PasswordReset extends StatelessWidget {
   const PasswordReset({super.key});
@@ -9,12 +11,12 @@ class PasswordReset extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Center( // centraliza horizontal e verticalmente
+        child: Center( 
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
             child: Column(
-              mainAxisSize: MainAxisSize.min, // evita ocupar toda a altura
-              crossAxisAlignment: CrossAxisAlignment.center, // centraliza horizontalmente
+              mainAxisSize: MainAxisSize.min, 
+              crossAxisAlignment: CrossAxisAlignment.center, 
               children: [
                 Image.asset(
                   'assets/icons/reset.png',
@@ -28,7 +30,13 @@ class PasswordReset extends StatelessWidget {
                 SizedBox(height: 14),
                 CustomButton(
                   text: "Return to Login",
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (context) => const LoginScreen(),
+                              ),
+                    );
+                  },
                 ),
               ],
             ),
