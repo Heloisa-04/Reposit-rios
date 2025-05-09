@@ -13,6 +13,7 @@ class _TesteState extends State<Teste> {
   String text = 'Olá'; // Agora está fora do build
   int count = 0;
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,6 +28,27 @@ class _TesteState extends State<Teste> {
             onPressed: () {
               setState(() {   });
               count++;
+            },
+          ),
+
+          SizedBox(height: 40,),
+
+          CustomButton(
+            text: "diminuir 1",
+            onPressed: () {
+              setState(() {   });
+              count = count -1 ;
+            },
+          ),
+
+          SizedBox(height: 40,),
+
+          CustomButton(
+            text: "Zerar",
+            onPressed: () {
+              setState(() {   });
+              count = 0 ;
+              
             },
           ),
         ],
