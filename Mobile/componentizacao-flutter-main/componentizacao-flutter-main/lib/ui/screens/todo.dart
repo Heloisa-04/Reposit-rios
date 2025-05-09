@@ -24,6 +24,13 @@ class _TodoState extends State<Todo> {
     }
   }
 
+  // Função para remover tarefa
+  void _removeTodo(int index) {
+    setState(() {
+      todoList.removeAt(index);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,6 +62,10 @@ class _TodoState extends State<Todo> {
               itemBuilder: (context, index) {
                 return ListTile(
                   title: Text(todoList[index]),
+                  trailing: IconButton(
+                    icon: const Icon(Icons.delete),
+                    onPressed: () => _removeTodo(index), // Chama a função para remover a tarefa
+                  ),
                 );
               },
             ),
