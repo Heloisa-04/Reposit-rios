@@ -1,8 +1,8 @@
-import 'package:loginfluxo/ui/password_screen.dart';
-import 'package:loginfluxo/ui/widgets/custom_button.dart';
-import 'package:loginfluxo/ui/widgets/custom_textbutton.dart';
-import 'package:loginfluxo/ui/widgets/custom_textfield.dart';
-import 'package:loginfluxo/ui/widgets/custom_title.dart';
+import 'package:componentes_flutter/ui/screens/password_screen.dart';
+import 'package:componentes_flutter/ui/widgets/custom_button.dart';
+import 'package:componentes_flutter/ui/widgets/custom_textbutton.dart';
+import 'package:componentes_flutter/ui/widgets/custom_textfield.dart';
+import 'package:componentes_flutter/ui/widgets/custom_title.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
