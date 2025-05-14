@@ -1,42 +1,43 @@
-from flask import Flask, request, jsonify
-from flask_mqtt import Mqtt
+from flask import Flask, render_template
+import paho.mqtt.client as mqtt
 
 app = Flask(__name__)
 
-app.config['MQTT_BROKER_URL'] = 'broker.emqx.io'
-app.config['MQTT_BROKER_PORT'] = 1883
-app.config['MQTT_USERNAME'] = ''  # Set this item when you need to verify username and password
-app.config['MQTT_PASSWORD'] = ''  # Set this item when you need to verify username and password
-app.config['MQTT_KEEPALIVE'] = 5  # Set KeepAlive time in seconds
-app.config['MQTT_TLS_ENABLED'] = False  # If your broker supports TLS, set it True
-topic = '/flask/mqtt'
+messages = [] # Lista que vai armazenar as mensagens recebidas
 
-mqtt_client = Mqtt(app)
+# MQTT Config
+BROKER = "192.168.0.108"  # IP da Rasp
+PORT = 1883 # porta padrão
+TOPIC = "grupo7/chat" # é o tópico que esta sendo monitorado
 
+def on_connect(client, userdata, flags, rc):                # client- chama métodos como subscribe ou publish
+    print(f"Conectado com código de resultado: {rc}")       # userdata- é qualquer dado que você quiser associar ao cliente MQTT
+    client.subscribe(TOPIC)                                 #flags-  dicionário que traz informações técnicas da conexão, aparece no terminal
+    #Inscreve o cliente
 
-@mqtt_client.on_connect()
-def handle_connect(client, userdata, flags, rc):
-   if rc == 0:
-       print('Connected successfully')
-       mqtt_client.subscribe(topic) # subscribe topic
-   else:
-       print('Bad connection. Code:', rc)
-
-
-@mqtt_client.on_message()
-def handle_mqtt_message(client, userdata, message):
-   data = dict(
-       topic=message.topic,
-       payload=message.payload.decode()
-  )
-   print('Received message on topic: {topic} with payload: {payload}'.format(**data))
+#Verifica as novas mensagens que vem do broker
+def on_message(client, userdata, msg):
+    print(f"Mensagem recebida: {msg.topic} -> {msg.payload.decode()}") #Transforma os bits em strings legiveis 
+    messages.append((msg.topic, msg.payload.decode())) #Adiciona a mensagem na lista
+    if len(messages) > 100:  #Limita a 100 mensagens enviadas
+        messages.pop(0)
 
 
-@app.route('/publish', methods=['POST'])
-def publish_message():
-   request_data = request.get_json()
-   publish_result = mqtt_client.publish(request_data['topic'], request_data['msg'])
-   return jsonify({'code': publish_result[0]})
+client = mqtt.Client() #instancia o cliente
+client.on_connect = on_connect # função que será chamada automaticamente quando o cliente conseguir se conectar ao broker
+client.on_message = on_message #a função callback que será chamada sempre que uma mensagem for recebida em um tópico inscrito.
+
+#inicia a conexão mqtt
+def start_mqtt():
+    client.connect(BROKER, PORT, 60) #estabelece a conexão com o broker
+    client.loop_start() #inicia um loop em segundo plano
+
+# Inicia MQTT quando app começa a rodar
+start_mqtt()
+
+@app.route('/')
+def index():
+    return render_template('index.html', messages=messages)
 
 if __name__ == '__main__':
-   app.run(host='127.0.0.1', port=5000)
+    app.run(debug=True)
