@@ -4,7 +4,7 @@ import menuMobileInit from "./modules/menuMobile.js";
 // import { Modal } from "./modules/modal.js";
 
 // tabMenuInit()
-// accordionInit()
+accordionInit()
 menuMobileInit()
 
 // new Modal('.js-modal', 
