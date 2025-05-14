@@ -1,4 +1,4 @@
-export default function tabMenuInit(){
+
     const imagens = document.querySelectorAll(".natureza-img");
     const conteudos = document.querySelectorAll(".natureza-content");
 
@@ -15,5 +15,3 @@ export default function tabMenuInit(){
 
     // faça a lógica sempre utilizando uma função para exportação
     // essa função sera inicializada no index.js
-}
-   
