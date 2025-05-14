@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Minha Homepage{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1><a href="/">🌍 Meu Site</a></h1>
+      <ul>
+        <li><a href="/">Início</a></li>
+        <li><a href="{% url 'sobre' %}">Sobre</a></li>
+        <li><a href="{% url 'contato' %}">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Bem-vindo(a) ao meu site Django!</h2>
+      <p>Esta é a homepage do meu projeto com Django. Aproveite para explorar!</p>
+      <a href="{% url 'contato' %}" class="btn">Fale comigo</a>
+    </section>
+
+    <section class="destaques">
+      <h3>Destaques</h3>
+      <ul>
+        <li>✅ Integração com views Django</li>
+        <li>📁 Estrutura com templates reutilizáveis</li>
+        <li>🎨 CSS modularizado com static files</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; {{ year }} - Desenvolvido por {{ autor }}</p>
+  </footer>
+</body>
+</html>
